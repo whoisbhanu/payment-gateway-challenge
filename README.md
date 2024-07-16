@@ -1,3 +1,46 @@
+## Getting Started
+
+This project uses [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
+
+## Build and Test
+
+### Prerequisites
+You will need to run `Bank Simulator` on docker
+
+To start the simulator, run `docker-compose up`
+
+### Build
+
+    cd src\PaymentGateway.Api
+    dotnet build
+    dotnet run
+
+### Unit Tests
+
+    cd test\PaymentGateway.Api.UnitTests
+    dotnet test
+
+    cd test\PaymentGateway.Clients.UnitTests
+    dotnet test
+
+    cd test\PaymentGateway.Data.UnitTests
+    dotnet test
+
+    cd test\PaymentGateway.Domain.UnitTests
+    dotnet test
+
+### Service Tests
+
+    cd test\PaymentGateway.ServiceTests
+    dotnet test
+
+## Swagger
+
+    /swagger
+
+## Health Check
+
+    /health
 
 ## Project structure
 ```
@@ -31,11 +74,11 @@ PaymentGateway.sln
 - Error handling middleware to keep centralised exception handling and controllers clean
 - Service tests that demonstrate full service use cases tested. Report attached at root by name `FeaturesReport.html`
 ## Known limitations
-- Used `int` for month for easier validation but due to this can't really provide input as 01
+- Used `int` for month for easier validation but due to this can't really provide input as `01` but as `1`
 ## Useful next steps
 - Polly for retries 
 - Handling other error scenarios for dependency 
-- Endpoint to return last 10 transactions for ease of use 
+- Endpoint to return last X transactions for ease of use 
 - User friendly payment id
 
 ## Service test report
